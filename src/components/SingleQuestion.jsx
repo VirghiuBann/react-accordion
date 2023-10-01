@@ -1,9 +1,17 @@
+import { useState } from 'react'
+
 const SingleQuestion = ({ id, title, info }) => {
+  const [toggle, setToggle] = useState(false)
+
   return (
-    <article key={id}>
-      <h2>{title}</h2>
-      <p>{info}</p>
-      <button>+</button>
+    <article className='question'>
+      <header>
+        <h5>{title}</h5>
+        <button className='question-btn' onClick={() => setToggle(!toggle)}>
+          {toggle ? '-' : '+'}
+        </button>
+      </header>
+      {toggle && <p>{info}</p>}
     </article>
   )
 }

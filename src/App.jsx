@@ -8,8 +8,8 @@ const App = () => {
 
   return (
     <main>
-      <section>
-        <h2>Questions</h2>
+      <section className='container'>
+        <h1>Questions</h1>
         <section>
           {questions.map((question) => {
             return <SingleQuestion {...question} key={question.id} />
